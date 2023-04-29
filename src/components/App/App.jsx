@@ -27,8 +27,6 @@ export const App = () => {
         <h2>Contacts</h2>
         <Filtr />
         {isLoading && !error ? <p>Loading...</p> : <ContactList />}
-        <ContactList
-        />
       </div>
     );
   }

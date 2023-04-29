@@ -7,21 +7,20 @@ import styles from './ContactList.module.css';
 
 
 
-const ContactList = () => {
-    const dispatch = useDispatch();
+export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const statusFilter = useSelector(getFilterValue);
+  const dispatch = useDispatch();
   const error = useSelector(getErrorStatus);
-
+  
   const filtersContacts = contacts.filter(
     contact =>
       contact.name.toLowerCase().includes(statusFilter.toLowerCase()) ||
       contact.number.replace(/-|\s/g, '').includes(statusFilter.replace(/-|\s/g, ''))
   );
-    console.log(filtersContacts)
-     const handleDeleteContact = data => {
-        dispatch(deleteContact(data));
-    };
+  const handleDeleteContact = data => {
+    dispatch(deleteContact(data));
+};
   
   
   return filtersContacts.length > 0 ?(

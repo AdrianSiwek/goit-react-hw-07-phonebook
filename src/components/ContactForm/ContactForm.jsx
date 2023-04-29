@@ -28,7 +28,7 @@ const ContactForm = () => {
         if (isAdded) {
             return;
         }
-            dispatch(addContact(name, number));
+            dispatch(addContact({name, number}));
             event.target.reset();
     };
     
